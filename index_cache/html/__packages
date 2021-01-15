@@ -1,0 +1,15 @@
+base
+dplyr
+ggplot2
+GGally
+plotly
+sf
+leaflet
+engsoccerdata
+tidyr
+maps
+mapdata
+varhandle
+crosstalk
+gridExtra
+DT

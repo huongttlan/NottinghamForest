@@ -1,0 +1,17 @@
+"0","scatter_scoredata<-readRDS(file = ""scatter_scoredata.rds"")"
+"2","Warning message:
+"
+"2","In yaml.load(string, error.label = error.label, ...) :"
+"2","
+ "
+"2"," Evaluating R expressions (!expr) will soon require explicit `eval.expr` option (see yaml.load help)
+"
+"0","scatter_base<-scatter_scoredata%>%"
+"0","  #highlight_key(~Team_Against)%>%"
+"0","  plot_ly(x=~jitter(GoalAgainst), y=~jitter(GoalScored), size=~1, text=~Team_Against_Date,"
+"0","          hoverinfo=""text"", colors=c(""#fed976"", ""#ef3b2c""))%>%"
+"0","  layout(xaxis=list(title=""Goals Against"", dtick = 1, tick0 = 0, tickmode = ""linear""),    "
+"0","         yaxis=list(title=""Goals Scored"", dtick = 1, tick0 = 0, tickmode = ""linear""))"
+"0",""
+"0","scatter_base_plot<-scatter_base%>%"
+"0","  add_markers(color=~GameType, frame= ~ Season)"

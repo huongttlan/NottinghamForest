@@ -1,0 +1,40 @@
+#############################################################
+# Process the data for scores
+addtitional_data<-england_current_new()%>%
+  mutate(division=as.character(division))
+england<-bind_rows(england,addtitional_data)%>%
+  group_by(Season, Date, home, visitor, hgoal, vgoal, result)%>%
+  filter(row_number()==1)%>%
+  ungroup()
+# Let's try to make scatter plot in which x-axis is the goal the being lost and yaxis is the goal the wins
+team_care<-c("Nottingham Forest")
+scatter_scoredata<-all_score_team_new(england, teamname=team_care)%>%
+  # mutate(GameType=case_when(home==team_care & result=="D" ~ "Home - Draw",
+  #                           home==team_care & result=="A" ~ "Home - Loss",
+  #                           home==team_care & result=="H" ~ "Home - Win",
+  #                           !(home==team_care) & result=="D" ~ "Away - Draw",
+  #                           !(home==team_care) & result=="A" ~ "Away - Win",
+  #                           !(home==team_care) & result=="H" ~ "Away - Loss",
+  #                           TRUE ~ "N/A"
+  #                           ))%>%
+  mutate(GameType=ifelse(home==team_care, "Home", "Away"))%>%
+  mutate(ResultType=case_when(home==team_care & result=="D" ~ "Draw",
+                              home==team_care & result=="A" ~ "Loss",
+                              home==team_care & result=="H" ~ "Win",
+                              !(home==team_care) & result=="D" ~ "Draw",
+                              !(home==team_care) & result=="A" ~ "Away - Win",
+                              !(home==team_care) & result=="H" ~ "Away - Loss",
+                              TRUE ~ "N/A"
+  ))%>%
+  mutate(Team_Against_Date=ifelse(home==team_care, 
+                                  paste0("Against ", visitor, " (Division ",division, " - ", Date, "): ", hgoal, " - ", vgoal),
+                                  paste0("Against ", home, " (Division ", division, " - ", Date, "): ", vgoal, " - ", hgoal)))%>%
+  mutate(Team_Against=ifelse(home==team_care, visitor, home))%>%
+  mutate(GoalScored=ifelse(home==team_care, hgoal, vgoal))%>%
+  mutate(GoalAgainst=ifelse(home==team_care, vgoal, hgoal))
+saveRDS(scatter_scoredata, file = "scatter_scoredata.rds")
+
+bar_scoredata<-alltimerecord_new(england, team_care)
+saveRDS(bar_scoredata, file = "bar_scoredata.rds")
+#############################################################
+
