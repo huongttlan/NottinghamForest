@@ -29,7 +29,7 @@ source("05_vstheworld_data_processing.R")
 ### Scores
 
 ```{r echo=FALSE, include=TRUE, eval=TRUE, message=FALSE, warning=FALSE,out.width = '100%', fig.height=5}
-
+library(tidyverse)
 scatter_scoredata<-readRDS(file = "scatter_scoredata.rds")
 scatter_base<-scatter_scoredata%>%
   #highlight_key(~Team_Against)%>%
@@ -138,7 +138,7 @@ all_positions_data_base_plot
 
 The raw data were abstracted from engsoccerdata package (James P. Curley (2020). engsoccerdata: English Soccer Data 1871-2019. R package version 0.1.7 DOI).
 
-<center>**This anlysis is crunched and posed by ![Tabs2](Tabs2.jpeg). Ryan, I hope you will enjoy the site!**</center>
+<center>**This analysis is crunched and posed by ![Tabs2](Tabs2.jpeg). Ryan, I hope you will enjoy the site!**</center>
 
 ### Goal Distribution
 
@@ -195,7 +195,7 @@ detailed_goals_plot <- detailed_goals_plot %>%
 detailed_goals_plot
 ```
 
-<center>**This anlysis is crunched and posed by ![Tabs3](Tabs3.jpeg). Ryan, I hope you will enjoy the site!**</center>
+<center>**This analysis is crunched and posed by ![Tabs3](Tabs3.jpeg). Ryan, I hope you will enjoy the site!**</center>
 
 ### Performance
 
@@ -254,7 +254,7 @@ subplot(toWebGL(ggplotly(ggg1,tooltip="text")),
 
 The raw data were abstracted from engsoccerdata package (James P. Curley (2020). engsoccerdata: English Soccer Data 1871-2019. R package version 0.1.7 DOI).
 
-<center>**This anlysis is crunched and posed by ![Tabs4](Tabs4.jpeg). Ryan, I hope you will enjoy the site!**</center>
+<center>**This analysis is crunched and posed by ![Tabs4](Tabs4.jpeg). Ryan, I hope you will enjoy the site!**</center>
 
 ### vs. England in top 4 tier games
 
@@ -274,4 +274,4 @@ bscols(widths=c(4,7), widgets, vs_team_result)
 
 The raw data were based on engsoccerdata package (James P. Curley (2020). engsoccerdata: English Soccer Data 1871-2019. R package version 0.1.7 DOI).
 
-<center>**This anlysis is crunched and posed by ![Tabs5](Tabs5.jpeg). Ryan, I hope you will enjoy the site!**</center>
+<center>**This analysis is crunched and posed by ![Tabs5](Tabs5.jpeg). Ryan, I hope you will enjoy the site!**</center>
