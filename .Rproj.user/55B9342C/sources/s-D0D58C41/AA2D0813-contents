@@ -29,6 +29,7 @@ source("05_vstheworld_data_processing.R")
 ### Scores
 
 ```{r echo=FALSE, include=TRUE, eval=TRUE, message=FALSE, warning=FALSE,out.width = '100%', fig.height=5}
+
 scatter_scoredata<-readRDS(file = "scatter_scoredata.rds")
 scatter_base<-scatter_scoredata%>%
   #highlight_key(~Team_Against)%>%
@@ -102,11 +103,12 @@ bar_base_home_plot<-
 s<-subplot(bar_base_home_plot, scatter_base_plot, titleX=TRUE, titleY = TRUE, widths = c(0.3, 0.7),
             margin=0.05)
 layout(s)
+
 ```
 
 The raw data were abstracted from engsoccerdata package (James P. Curley (2020). engsoccerdata: English Soccer Data 1871-2019. R package version 0.1.7 DOI).
 
-<center>**This anlysis is crunched and posed by ![Tabs1](Tabs1.jpeg). Ryan, I hope you will enjoy the site!**</center>
+<center>**This analysis is crunched and posed by ![Tabs1](Tabs1.jpeg). Ryan, I hope you will enjoy the site!**</center>
 
 ### Standings
 
@@ -254,7 +256,7 @@ The raw data were abstracted from engsoccerdata package (James P. Curley (2020).
 
 <center>**This anlysis is crunched and posed by ![Tabs4](Tabs4.jpeg). Ryan, I hope you will enjoy the site!**</center>
 
-### vs. England in top 4 tier soccer games
+### vs. England in top 4 tier games
 
 ```{r echo=FALSE, include=TRUE, eval=TRUE, message=FALSE, warning=FALSE, out.width = '100%', fig.height=5}
 mevstheworld_result_spread<-readRDS(file = "mevstheworld_result_spread.rds")
