@@ -7,7 +7,7 @@ output:
       primary: "#EA80FC"
       base_font: !expr bslib::font_google("Grandstander")
 ---
-<center> <h1> 1892-2020 Nottingham Forest </h1> </center>
+<center> <h1> 1892-Current Nottingham Forest </h1> </center>
 
 ```{r, echo=FALSE}
 htmltools::img(src = knitr::image_uri("logo3.jpg"),
