@@ -1,3 +1,0 @@
-# Call in all custom functions
-source("all_functions.R")
-england<-as_tibble(england)
