@@ -271,7 +271,6 @@ widgets<-bscols(filter_select("team_compare", "vs. Team", mevstheworld_result_sp
 bscols(widths=c(4,7), widgets, vs_team_result)
 ```
 
-
 The raw data were based on engsoccerdata package (James P. Curley (2020). engsoccerdata: English Soccer Data 1871-2019. R package version 0.1.7 DOI).
 
 <center>**This analysis is crunched and posed by ![Tabs5](Tabs5.jpeg). Ryan, I hope you will enjoy the site!**</center>
