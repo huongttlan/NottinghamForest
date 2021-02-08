@@ -17,7 +17,7 @@ htmltools::img(src = knitr::image_uri("logo3.jpg"),
 
 ## {.tabset .tabset-pills}
 
-```{r library, echo=FALSE, include=TRUE, eval=TRUE, message=FALSE, warning=FALSE, cache = TRUE}
+```{r library, echo=FALSE, include=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 source("all_functions.R")
 source("01_Scores_data_processing.R")
 source("02_Standings_data_processing.R")
